@@ -28,10 +28,10 @@ body, html {
 
 
 .top-right-chat {
-    width: 100%; /* Ancho máximo porcentual */
-    max-width: 1500px; /* Ancho máximo deseado */
+    width: 100%;
+    max-width: 80%;
     height: auto;
-    margin: 20px 10px 10px 400px; /* Centrar horizontalmente en la página */
+    margin: 20px 10px 10px 25%; /* Ejemplo de margen izquierdo del 20% */
     background: #FFFFFF;
     mix-blend-mode: normal;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -39,9 +39,9 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px  ;
-    margin-right: 1px ; /* Mover hacia la derecha */
+    padding: 20px;
 }
+
 
 
 
@@ -49,10 +49,13 @@ body, html {
 .top-right-chat h2 {
     padding-bottom: 10px;
     background-color: white;
-    font-weight: 200;
+    font-weight: 100px;
     font-size: 33px;
-}
 
+}
+.top-right-chat span{
+    color: rgb(24, 192, 24);
+}
 .top-right-chat ul {
     display: flex;
     list-style: none;
@@ -63,12 +66,16 @@ body, html {
 .top-right-chat ul li {
     margin-right: 20px;
 }
+.car-session-div a{
+    text-decoration: none;
+    color: #000000;
 
+}
 .middle-right-chat {
     width: 100%;
-    max-width: 443px;
+    max-width: 350px;
     max-height: 100%;
-    height: 1100px;
+    height: 875px;
     margin-right: auto; 
     margin-left: 0; 
     order: 0; 
@@ -86,50 +93,56 @@ body, html {
 
 
 .bottom-chat {
-    width: 1171px; /* Ancho deseado para bottom-chat */
-    height: 907px; /* Altura deseada para bottom-chat */
+    width: 100%;
+    max-width: 80%; /* Ancho deseado para bottom-chat */
+    height: 723px; /* Altura deseada para bottom-chat */
     background: white;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 21px;
-    margin-left: auto; /* Mover hacia la derecha */
-    margin-right: auto; /* Mover hacia la izquierda */
-    margin-bottom: 20%;
+    margin: 20% auto; /* Centrar verticalmente */
+    display: flex;
+    flex-direction: column; /* Apila los mensajes encima del input */
+    justify-content: space-between; /* Espacio entre mensajes e input */
+    padding: 20px;
+    margin-top: -44% ;
+    margin-right: 10px;
+
+}
+.chat-messages {
+    overflow-y: auto; /* Hace que los mensajes sean desplazables */
+    max-height: calc(100% - 70px); /* Altura máxima para los mensajes */
 }
 
 .text-msj {
     background-color: rgb(255, 255, 255);
-    width: 95%;
+    width: 100%;
     height: auto;
-    position: relative;
-    bottom: 10%;
-    left: 2.5%;
-    right: 0;
     border-radius: 21px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-color: #d3d3d4;
-    
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
 
 .text-msj input {
     background-color: white;
-    width: 100%;
+    flex: 1; /* Ocupa todo el espacio disponible */
     border-radius: 10px;
     padding: 10px;
-    
-    justify-content: center;
-    
+    border: none;
+    outline: none; /* Quita el borde del input al hacer clic */
+    font-size: 16px; /* Tamaño de fuente ajustable */
+    height: 60px;
 }
 
 .text-msj button {
-    position: absolute;
-    height: 90%;
-    border: none;
-    right: 20px;
-    top: 3.5%;
     background-color: white;
+    border: none;
+    cursor: pointer;
+    outline: none; /* Quita el borde del botón al hacer clic */
     font-size: 24px;
 }
-
 .text-msj i {
     background-color: white;
 }
@@ -182,7 +195,7 @@ body, html {
 }
 
 .categorias-faqs-box button {
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: #FFFFFF;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -191,11 +204,12 @@ body, html {
 .categorias-faqs-box button a {
     background-color: #FFFFFF;
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 12px;
     margin: 15px;
-    font-size: 20px;
+    font-size: .8rem;
     color:black;
-    font-size: 20px;
+    padding: 0px 10px   ;
+    
 }
 
 .categorias-faqs-box button:hover,
@@ -232,9 +246,11 @@ body, html {
     padding: 10px;
     color: #ffffff;
     margin: 10px auto;
-    border-radius: 21px;
+    border-radius: 9.3px;
     width: 100%;
-    height: 80px;
+    height: 3.7rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
 #img-1-cat {
@@ -268,28 +284,39 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
 }
-#dest-middle{
-    padding: 20px;
+#dest-middle {
+
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between; /* Alinea elementos en filas de 2 */
+    align-items: center; /* Centra verticalmente los elementos en cada fila */
+    padding-top:20px;
+    margin: 15px;
 }
-.img-dest{
-    
-    padding: 15px 27px;
+
+.img-dest {
+    margin: 0;
+    padding: 0;
     display: flex;
-    
-    
+    justify-content: space-between;
+    width: 128.22px;
 }
+
 .img-dest span{
     display: flex;
     justify-content: center;
-    padding: 10px;
+    padding: 3px ;
+    text-align: center;
+    font-size:13px;
     
 }
 .img-dest a{
     text-decoration: none;
     color: black;
+
 }    
 
-
+.result-categorias-btn{
+    margin-top:-10px ;
+}
     

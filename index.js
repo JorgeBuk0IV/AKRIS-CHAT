@@ -1,36 +1,31 @@
 const msjInput = document.getElementById('mensajeInput');
 const sendMsjBtn = document.getElementById('enviarMensaje');
-const chatMsj = document.querySelector('.box-msj');
+const chatMessages = document.querySelector('.chat-messages'); // Cambiado el selector para apuntar al contenedor de mensajes
 
-sendMsjBtn.addEventListener('click', () =>{
+sendMsjBtn.addEventListener('click', () => {
     enviarMensaje();
-})
+});
 
-msjInput.addEventListener('keypress', (e) =>{
-    if(e.key === 'Enter'){
+msjInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
         enviarMensaje();
     }
-})
-function enviarMensaje(){
-    const msj = mensajeInput.value.trim();
-    if( msj !== ''){
+});
+
+function enviarMensaje() {
+    const msj = msjInput.value.trim();
+    if (msj !== '') {
         const nuevoMsj = document.createElement('div');
         nuevoMsj.className = 'mensaje-usuario';
         nuevoMsj.textContent = msj;
-        chatMsj.appendChild(nuevoMsj);
+        chatMessages.appendChild(nuevoMsj);
         msjInput.value = '';
 
-
-        chatMsj.scrollTop = chatMsj.scrollHeight;
+        // Desplazar hacia el nuevo mensaje agregado
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
+}
 
-}
-if (chatMsj.scrollHeight > chatMsj.clientHeight){
-    chatMsj.style.overflowY = 'scroll';
-}else {
-    // Si no se supera la altura del contenedor, puedes ocultar la barra de desplazamiento
-    chatMsj.style.overflowY = 'hidden';
-}
 
 const categoriasButton = document.getElementById('categoriasButton');
 const faqsButton = document.getElementById('faqsButton');
